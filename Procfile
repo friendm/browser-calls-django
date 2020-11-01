@@ -1,1 +1,1 @@
-web: gunicorn twilio_sample_project.wsgi
+web: gunicorn twilio_sample_project:app
