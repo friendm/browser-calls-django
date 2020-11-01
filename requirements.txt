@@ -51,9 +51,9 @@ django_heroku
 
 # External libraries
 SQLAlchemy==1.0.11
-ConfigParser
+
 psycopg2
-py-mysql2pgsql
+
 
 #server
 gunicorn==19.9.0
