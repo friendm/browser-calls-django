@@ -1,1 +1,1 @@
-web: gunicorn twillio_sample_project:app
+web: gunicorn browser-calls-django:app
