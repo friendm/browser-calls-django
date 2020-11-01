@@ -11,7 +11,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 from django.core.exceptions import ImproperlyConfigured
-
+import django_heroku
 import os
 
 from dotenv import load_dotenv
@@ -148,3 +148,5 @@ MESSAGE_TAGS = {
 
 # Redirect login to /support/dashboard
 LOGIN_REDIRECT_URL = '/support/dashbaord'
+
+django_heroku.settings(locals())
