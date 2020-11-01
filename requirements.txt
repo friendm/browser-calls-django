@@ -51,6 +51,7 @@ django_heroku
 
 # External libraries
 SQLAlchemy==1.0.11
+ConfigParser
 psycopg2
 py-mysql2pgsql
 
