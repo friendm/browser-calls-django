@@ -1,1 +1,1 @@
-web: gunicorn twillio_sample_project.wsgi
+web: gunicorn browser_calls.wsgi
