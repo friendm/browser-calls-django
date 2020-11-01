@@ -1,1 +1,1 @@
-web: gunicorn browser-calls-django:app
+web: gunicorn application:app
