@@ -22,13 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'not-so-secret'
 
 ALLOWED_HOSTS = []
 
 # Loading .env file automatically
-load_dotenv(dotenv_path=os.path.join(BASE_DIR, '.env'))
+#load_dotenv(dotenv_path=os.path.join(BASE_DIR, '.env'))
 
 # Twilio API credentials
 TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')
