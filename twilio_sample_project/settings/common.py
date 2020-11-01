@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 from django.core.exceptions import ImproperlyConfigured
 import django_heroku
 import os
+import whitenoise
 
 from dotenv import load_dotenv
 
@@ -79,7 +80,7 @@ MIDDLEWARE = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 )
 
 ROOT_URLCONF = 'twilio_sample_project.urls'
