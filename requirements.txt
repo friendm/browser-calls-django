@@ -46,7 +46,7 @@ toml==0.10.0
 twilio==6.38.1
 urllib3==1.25.9
 whitenoise==5.0.1
-
+django_heroku
 #TEST1
 
 # External libraries
