@@ -1,1 +1,1 @@
-web: gunicorn browser_calls:app
+web: gunicorn browser_calls.wsgi
