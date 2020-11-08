@@ -69,7 +69,7 @@ def call(request):
          from_=settings.TWILIO_NUMBER
      )
 
-    dial = response.dial(caller_id=settings.TWILIO_NUMBER)
+    #dial = response.dial(caller_id=settings.TWILIO_NUMBER)
 
 
 
