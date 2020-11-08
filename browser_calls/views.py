@@ -31,22 +31,22 @@ def support_dashboard(request):
     return render(request, 'browser_calls/support_dashboard.html', context)
 
 
-def get_token(request):
-    identity = 'support_agent' if 'dashboard' in request.GET['forPage'] else 'customer'
+#def get_token(request):
+#    identity = 'support_agent' if 'dashboard' in request.GET['forPage'] else 'customer'
 
     # Create access token with credentials
-    access_token = AccessToken(settings.TWILIO_ACCOUNT_SID, settings.API_KEY, settings.API_SECRET, identity=identity)
+ #   access_token = AccessToken(settings.TWILIO_ACCOUNT_SID, settings.API_KEY, settings.API_SECRET, identity=identity)
 
     # Create a Voice grant and add to token
-    voice_grant = VoiceGrant(
-        outgoing_application_sid=settings.TWIML_APPLICATION_SID,
-        incoming_allow=True, # Optional: add to allow incoming calls
-    )
-    access_token.add_grant(voice_grant)
+  #  voice_grant = VoiceGrant(
+   #     outgoing_application_sid=settings.TWIML_APPLICATION_SID,
+    #    incoming_allow=True, # Optional: add to allow incoming calls
+    #)
+    #access_token.add_grant(voice_grant)
 
-    token = access_token.to_jwt()
+   # token = access_token.to_jwt()
 
-    return JsonResponse({'token': token.decode('utf-8')})
+    #return JsonResponse({'token': token.decode('utf-8')})
 
 @csrf_exempt
 def call(request):
