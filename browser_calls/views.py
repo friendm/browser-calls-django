@@ -43,8 +43,7 @@ def get_token(request):
         incoming_allow=True, # Optional: add to allow incoming calls
     )
     access_token.add_grant(voice_grant)
-
-   token = access_token.to_jwt()
+    token = access_token.to_jwt()
 
     return JsonResponse({'token': token.decode('utf-8')})
 
