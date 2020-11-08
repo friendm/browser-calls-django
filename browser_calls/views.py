@@ -64,7 +64,7 @@ def call(request):
     call = client.calls \
     .create(
          machine_detection='Enable',
-         twiml='<Response><Say>Ahoy, World!</Say></Response>',
+         #twiml='<Response><Say>Ahoy, World!</Say></Response>',
          to=number_to_call,
          from_=settings.TWILIO_NUMBER
      )
