@@ -8,7 +8,7 @@ from django.views.generic import CreateView
 from twilio.jwt.access_token import AccessToken
 from twilio.jwt.access_token.grants import VoiceGrant
 from twilio.twiml.voice_response import VoiceResponse
-
+from twilio.twiml.voice_response import Pause, VoiceResponse, Say
 from .models import SupportTicket
 
 
@@ -51,6 +51,9 @@ def get_token(request):
 def call(request):
     """Returns TwiML instructions to Twilio's POST requests"""
     response = VoiceResponse()
+    response.say('I will pause 10 seconds starting now!')
+    response.pause(length=10)
+    response.say('I just paused 10 seconds')
     dial = response.dial(caller_id=settings.TWILIO_NUMBER)
     
         # If the browser sent a phoneNumber param, we know this request
