@@ -40,7 +40,8 @@ def get_token(request):
      #Create a Voice grant and add to token
     voice_grant = VoiceGrant(
         outgoing_application_sid=settings.TWIML_APPLICATION_SID,
-        incoming_allow=True, # Optional: add to allow incoming calls
+        incoming_allow=True, # Optional: add to allow incoming calls,
+        machine_detection='Enable'
     )
     access_token.add_grant(voice_grant)
     token = access_token.to_jwt()
@@ -51,10 +52,11 @@ def get_token(request):
 def call(request):
     """Returns TwiML instructions to Twilio's POST requests"""
     response = VoiceResponse()
+
+    dial = response.dial(caller_id=settings.TWILIO_NUMBER)
     response.say('I will pause 10 seconds starting now!')
     response.pause(length=10)
     response.say('I just paused 10 seconds')
-    dial = response.dial(caller_id=settings.TWILIO_NUMBER)
     
         # If the browser sent a phoneNumber param, we know this request
     # is a support agent trying to call a customer's phone
