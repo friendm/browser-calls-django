@@ -63,6 +63,7 @@ def call(request):
         dial.number(request.POST['phoneNumber'])
     gather = Gather(num_digits=1)
     gather.say('For sales, press 1. For support, press 2.')
+    response.append(gather)
     
 
 
