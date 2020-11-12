@@ -55,7 +55,7 @@ def call(request):
     response = VoiceResponse()
     
     dial = response.dial(caller_id=settings.TWILIO_NUMBER)
-    response.say('hello this is mike friend', voice='woman', language='fr-FR')
+    #response.say('hello this is mike friend', voice='woman', language='fr-FR')
     gather = Gather(num_digits=1)
     gather.say('For sales, press 1. For support, press 2.')
     dial.append(gather)
