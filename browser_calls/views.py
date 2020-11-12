@@ -56,14 +56,15 @@ def call(request):
     
     dial = response.dial(caller_id=settings.TWILIO_NUMBER)
     #response.say('hello this is mike friend', voice='woman', language='fr-FR')
-    with dial.gather(num_digits=1) as g:
-        g.say('For sales, press 1. For support, press 2.')
+
 
     
         # If the browser sent a phoneNumber param, we know this request
     # is a support agent trying to call a customer's phone
     if 'phoneNumber' in request.POST:
         dial.number(request.POST['phoneNumber'])
+    with dial.gather(num_digits=1) as g:
+        g.say('For sales, press 1. For support, press 2.')
 
     
 
