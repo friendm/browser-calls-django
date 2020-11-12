@@ -63,8 +63,9 @@ def call(request):
     # is a support agent trying to call a customer's phone
     if 'phoneNumber' in request.POST:
         dial.number(request.POST['phoneNumber'])
-    with dial.gather(num_digits=1) as g:
-        g.say('For sales, press 1. For support, press 2.')
+    g=Gather(num_digits=1)
+    g.say('For sales, press 1. For support, press 2.')
+    dial.append(g)
 
     
 
