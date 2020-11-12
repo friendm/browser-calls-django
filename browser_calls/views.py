@@ -58,7 +58,7 @@ def call(request):
     response.say('hello this is mike friend', voice='woman', language='fr-FR')
     gather = Gather(num_digits=1)
     gather.say('For sales, press 1. For support, press 2.')
-    response.append(gather)
+    dial.append(gather)
     
         # If the browser sent a phoneNumber param, we know this request
     # is a support agent trying to call a customer's phone
