@@ -53,8 +53,11 @@ def get_token(request):
 def call(request):
     """Returns TwiML instructions to Twilio's POST requests"""
     response = VoiceResponse()
+    g=Gather(num_digits=1)
+    g.say('For sales, press 1. For support, press 2.')
+    response.append(g)
     
-    dial = response.dial(caller_id=settings.TWILIO_NUMBER)
+    response.dial(request.POST['phoneNumber'],caller_id=settings.TWILIO_NUMBER)
     #response.say('hello this is mike friend', voice='woman', language='fr-FR')
 
 
@@ -62,12 +65,8 @@ def call(request):
     
         # If the browser sent a phoneNumber param, we know this request
     # is a support agent trying to call a customer's phone
-    if 'phoneNumber' in request.POST:
-        dial.number(request.POST['phoneNumber'])
         
-    g=Gather(num_digits=1)
-    g.say('For sales, press 1. For support, press 2.')
-    response.append(g)
+
 
 
     
