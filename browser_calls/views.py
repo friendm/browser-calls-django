@@ -39,8 +39,9 @@ def get_token(request):
 
      #Create a Voice grant and add to token
     voice_grant = VoiceGrant(
-        outgoing_application_sid=settings.TWIML_APPLICATION_SID,
-        incoming_allow=True, # Optional: add to allow incoming calls
+        outgoing_application_sid=settings.TWIML_APPLICATION_SID
+        #,
+        #incoming_allow=True, # Optional: add to allow incoming calls
         #,
         #machine_detection='Enable'
     )
