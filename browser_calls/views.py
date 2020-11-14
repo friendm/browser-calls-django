@@ -59,6 +59,8 @@ def call(request):
     response.append(g)
     
     response.dial(request.POST['phoneNumber'],caller_id=settings.TWILIO_NUMBER)
+    response.say('please hit pound to connect')
+    response.pay(charge_amount='20.45')
     #response.say('hello this is mike friend', voice='woman', language='fr-FR')
 
 
