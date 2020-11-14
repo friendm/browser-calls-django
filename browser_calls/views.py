@@ -54,9 +54,6 @@ def get_token(request):
 def call(request):
     """Returns TwiML instructions to Twilio's POST requests"""
     response = VoiceResponse()
-    g=Gather(num_digits=1)
-    g.say('For sales, press 1. For support, press 2.')
-    response.append(g)
     
     response.dial(request.POST['phoneNumber'],caller_id=settings.TWILIO_NUMBER)
     response.say('please hit pound to connect')
